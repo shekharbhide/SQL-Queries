@@ -1,7 +1,7 @@
 use celebalTask1;
 SELECT StudentID, FirstName, LastName FROM Students;
-
-SELECT StudentID, FirstName, LastName FROM Students;
+select * from Students;
+SELECT StudentID, FirstName, LastName,Email FROM Students;
 
 SELECT * FROM Students ORDER BY FirstName ASC;
 
@@ -27,4 +27,5 @@ select * from Students;
 
 
 SELECT DISTINCT CourseName FROM Courses;
+
 
