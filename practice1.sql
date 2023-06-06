@@ -1,6 +1,7 @@
 use employeeDB;
 
 
+/*CREATE TABLE*/
 create table employee_info(
 	empId int primary key,
 	empName varchar(20) NOT NULL,
@@ -10,15 +11,80 @@ create table employee_info(
 	deptId int,
 );
 
-
+/*INSERT*/
 insert into employee_info values
 (2,'john',30000,'data scintints','7821980249',15),
 (3,'sanket',20000,'developer','9921980249',14);
 
-select * from employee_info;
-
 
 insert into employee_info(empId,empName,empSalary) values
 (4,'smith',25000),
-(5,'smash',15000);
+(6,'smash',15000);
+
+/*SELECT*/
+select * from employee_info;
+select empName,empSalary,job from employee_info;
+
+
+/*update */
+update employee_info 
+set empSalary = empSalary+10000;
+
+update employee_info
+set job='tester'
+where empName='smith';
+
+
+update employee_info
+set phone='2390345678',deptId=20
+where empName='smith';
+
+update employee_info 
+set empName='john deo' 
+where empName='john';
+
+/*DELETE*/
+delete from employee_info; /*delete all records*/
+select * from employee_info;
+
+delete from employee_info where deptId=20;
+
+
+
+/* ORDER BY */
+select empName from employee_info 
+order by empName;
+
+select * from employee_info 
+order by empName;
+
+select * from employee_info 
+order by empSalary asc;
+
+/*	WHERE CLAUSE */
+/*with select*/
+select * from employee_info where empSalary <= 30000;
+
+/* with update */
+update employee_info set empName='ronny' where empId=5;
+update employee_info set empSalary +=20000 where empId=5;
+
+select * from employee_info ;
+
+/* with delete */
+
+delete from employee_info where empName = 'smash';
+
+
+/* Aggregation funcions */
+
+select sum(empSalary) as totalSalary from employee_info;
+
+select max(empSalary) as maxSalary from employee_info;
+
+select min(empSalary) as minSalary from employee_info;
+
+select AVG(empSalary) from employee_info;
+
+select COUNT(empName) from employee_info;
 
