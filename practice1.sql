@@ -1,4 +1,4 @@
-use employeeDB;
+git use employeeDB;
 
 
 /*CREATE TABLE*/
