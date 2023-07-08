@@ -1,4 +1,4 @@
-git use employeeDB;
+use employeeDB;
 
 
 /*CREATE TABLE*/
@@ -88,3 +88,23 @@ select AVG(empSalary) from employee_info;
 
 select COUNT(empName) from employee_info;
 
+select * from employee_info where job='developer' and empSalary<=30000;
+select * from employee_info where job='developer' or job='data engineer';
+
+select * from employee_info where empName like '_v';
+select * from employee_info where empName like '%r';
+select * from employee_info where deptId like '1_';
+
+SELECT * FROM employee_info WHERE empName LIKE 's%';
+SELECT * FROM employee_info WHERE job LIKE '%developer%';
+SELECT * FROM employee_info WHERE phone LIKE '7%';
+
+alter table employee_info add empAddress varchar(50);
+
+update employee_info
+set empAddress = 'Nashik' 
+where empId=1;
+
+update employee_info
+SET empAddress = 'Yurope'
+where empId=2;

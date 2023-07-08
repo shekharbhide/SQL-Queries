@@ -51,13 +51,34 @@ group by deptId,empSalary having empSalary>30000
 
 
  
+create database studentDB;
+use studentDB;
 
+create table exam(
+	student_id int,
+	subject varchar(20),
+	marks int
+);
 
+insert into exam values(1,'chemistry',91),
+(1,'physics',91),
+(2,'chemistry',80),
+(2,'physics',90),
+(3,'chemistry',80),
+(4,'chemistry',71),
+(4,'physics',54),
+(6,'chemistry',71),
+(6,'physics',71);
 
+select * from exam
 
-
-
-
+-- find students with same  marks in physics and cheistry
+select student_id
+from exam
+where subject in ('chemistry','physics')
+group by student_id
+having COUNT(distinct subject)=2
+ and COUNT(distinct marks)=1
 
 
 

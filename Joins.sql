@@ -69,10 +69,12 @@ VALUES
   (555, 'Tokyo', 'Japan');
 
 
+  use db_for_joins
+
   select * from customer;
   select  * from payment;
   /* INNER JOIN */
-  select *
+  select *  
   from customer as c
   inner join payment as p  
   on c.customer_id = p.customer_id;
